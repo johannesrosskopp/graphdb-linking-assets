@@ -27,6 +27,12 @@ Accept: application/json
 
 ###
 
+### Get linked assets reverse ID
+GET {{graphdb_linking_assets_HostAddress}}/domain-assets/1970381e-8c9e-4e3b-a6b7-97cf569a87fc/linked
+Accept: application/json
+
+###
+
 ### Link two domain assets (replace IDs)
 POST {{graphdb_linking_assets_HostAddress}}/domain-assets/links
 Content-Type: application/json

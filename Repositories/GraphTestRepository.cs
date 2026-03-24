@@ -37,7 +37,7 @@ public class GraphTestRepository(GremlinClient gremlinClient)
     public async Task<IEnumerable<DomainAsset>> GetLinkedDomainAssetsAsync(Guid sourceId)
     {
         var results = await gremlinClient.SubmitAsync<dynamic>(
-            $"g.V('{sourceId}').out('{DomainAssetLink.EdgeLabel}').project('id','name').by('assetId').by('name')");
+            $"g.V('{sourceId}').both('{DomainAssetLink.EdgeLabel}').project('id','name').by('assetId').by('name')");
 
         return results.Select(v => new DomainAsset
         {
