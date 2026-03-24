@@ -8,3 +8,7 @@ az cosmosdb gremlin database create --resource-group "$rg_name" --account-name "
 
 # using tenant Id as partiion key allows for multi tennency but kepps data from tenenats together for faster traversals
 az cosmosdb gremlin graph create --resource-group "$rg_name" --account-name "$db_account_name" --database-name "$db_name" --name "$graph_name" --partition-key-path "/tenantId"
+
+az cosmosdb show --resource-group "$rg_name" --name "$db_account_name" --query "{host:name}"
+
+az cosmosdb keys list --resource-group "$rg_name" --name "$db_account_name" --type "keys"
