@@ -4,6 +4,20 @@ ASP.NET Core Web API that manages domain asset linking using Azure Cosmos DB (Gr
 
 ---
 
+## Test Against Remote
+
+The remote API is protected by Easy Auth. Get a token and write it to `.env` (gitignored) so the REST Client `.http` file can pick it up:
+
+```bash
+export TOKEN=$(az account get-access-token \
+  --resource $CONTAINER_APP_CLIENT_ID \
+  --query accessToken -o tsv)
+
+echo "TOKEN=$TOKEN" > .env
+```
+
+Tokens expire after ~1 hour — re-run both commands to refresh. The `.http` file uses `{{$dotenv TOKEN}}` to read the value from `.env`.
+
 ## Build
 
 ### Prerequisites

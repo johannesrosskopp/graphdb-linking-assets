@@ -4,23 +4,27 @@
 
 GET {{graphdb_linking_assets_HostAddress}}/weatherforecast/
 Accept: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
 
 ###
 
 ### OpenAPI spec (requires EnableOpenApi=true)
 GET {{graphdb_linking_assets_HostAddress}}/openapi/v1.json
 Accept: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
 
 ###
 
 ### Get all domain assets
 GET {{graphdb_linking_assets_HostAddress}}/domain-assets
 Accept: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
 
 ###
 
 ### Create a domain asset
 POST {{graphdb_linking_assets_HostAddress}}/domain-assets
+Authorization: Bearer {{$dotenv TOKEN}}
 Content-Type: application/json
 
 {
@@ -32,17 +36,20 @@ Content-Type: application/json
 ### Get assets linked to a specific asset (replace ID)
 GET {{graphdb_linking_assets_HostAddress}}/domain-assets/84758389-f988-45e2-a4c1-c17d67b37252/linked
 Accept: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
 
 ###
 
 ### Get linked assets reverse ID
 GET {{graphdb_linking_assets_HostAddress}}/domain-assets/1970381e-8c9e-4e3b-a6b7-97cf569a87fc/linked
 Accept: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
 
 ###
 
 ### Link two domain assets (replace IDs)
 POST {{graphdb_linking_assets_HostAddress}}/domain-assets/links
+Authorization: Bearer {{$dotenv TOKEN}}
 Content-Type: application/json
 
 {
