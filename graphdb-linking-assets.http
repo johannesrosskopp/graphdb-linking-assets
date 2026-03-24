@@ -1,6 +1,14 @@
 @graphdb_linking_assets_HostAddress = http://localhost:5015
 
+@graphdb_linking_assets_HostAddress = https://core-container-app.agreeablesand-dc52a2ff.westeurope.azurecontainerapps.io
+
 GET {{graphdb_linking_assets_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### OpenAPI spec (requires EnableOpenApi=true)
+GET {{graphdb_linking_assets_HostAddress}}/openapi/v1.json
 Accept: application/json
 
 ###
