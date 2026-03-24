@@ -4,3 +4,36 @@ GET {{graphdb_linking_assets_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Get all domain assets
+GET {{graphdb_linking_assets_HostAddress}}/domain-assets
+Accept: application/json
+
+###
+
+### Create a domain asset
+POST {{graphdb_linking_assets_HostAddress}}/domain-assets
+Content-Type: application/json
+
+{
+  "name": "My Domain Asset 2"
+}
+
+###
+
+### Get assets linked to a specific asset (replace ID)
+GET {{graphdb_linking_assets_HostAddress}}/domain-assets/84758389-f988-45e2-a4c1-c17d67b37252/linked
+Accept: application/json
+
+###
+
+### Link two domain assets (replace IDs)
+POST {{graphdb_linking_assets_HostAddress}}/domain-assets/links
+Content-Type: application/json
+
+{
+  "sourceId": "84758389-f988-45e2-a4c1-c17d67b37252",
+  "targetId": "1970381e-8c9e-4e3b-a6b7-97cf569a87fc"
+}
+
+###

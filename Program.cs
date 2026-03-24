@@ -1,5 +1,7 @@
 using Azure.Identity;
 using graphdb_linking_assets.Infrastructure;
+using graphdb_linking_assets.Repositories;
+using graphdb_linking_assets.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,8 @@ builder.Services.AddControllers()
 
 builder.Services.AddOpenApi();
 builder.AddGremlinClient();
+builder.Services.AddSingleton<GraphTestRepository>();
+builder.Services.AddScoped<DomainAssetService>();
 
 var app = builder.Build();
 

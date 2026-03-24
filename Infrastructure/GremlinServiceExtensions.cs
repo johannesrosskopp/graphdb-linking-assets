@@ -1,6 +1,7 @@
 namespace graphdb_linking_assets.Infrastructure;
 
 using Gremlin.Net.Driver;
+using Gremlin.Net.Structure.IO.GraphSON;
 using Microsoft.Extensions.Options;
 
 public static class GremlinServiceExtensions
@@ -23,7 +24,8 @@ public static class GremlinServiceExtensions
                 username: $"/dbs/{opts.Database}/colls/{opts.Collection}",
                 password: config[KeyVaultSecrets.GremlinPrimaryKey]
             );
-            return new GremlinClient(server);
+            // Cosmos DB Gremlin API only supports GraphSON 2.0 serialization format
+            return new GremlinClient(server, new GraphSON2MessageSerializer());
         });
 
         return builder;
