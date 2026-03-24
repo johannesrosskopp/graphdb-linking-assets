@@ -1,0 +1,5 @@
+rg_name="graph-asset-linking"
+location="westeurope"
+db_account_name="cosmos-gremlin-db-account"
+db_name="asset-linking-db"
+graph_name="asset-linking-graph"
