@@ -21,7 +21,7 @@ builder.Services.AddScoped<DomainAssetService>();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Configuration.GetValue<bool>("EnableOpenApi"))
     app.MapOpenApi();
 
 app.UseAuthorization();
