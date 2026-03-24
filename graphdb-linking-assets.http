@@ -1,0 +1,6 @@
+@graphdb_linking_assets_HostAddress = http://localhost:5015
+
+GET {{graphdb_linking_assets_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
